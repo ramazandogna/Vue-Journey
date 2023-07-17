@@ -1,3 +1,3 @@
 # Vue-Journey
 
-This project showing me to my learning Vuejs journey. I have already know React but i should use Vue for my career journey. So lets start.
+Bu proje bana Vuejs öğrenme yolculuğumu temsil etmek için oluşturuldu. React'i zaten biliyorum ama kariyer yolculuğum için Vue kullanmalıyım. Haydi başlayalım.
