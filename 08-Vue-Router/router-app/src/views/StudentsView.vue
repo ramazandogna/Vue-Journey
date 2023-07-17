@@ -5,7 +5,10 @@
          v-for="student in students"
          :key="student.id"
       >
-         <p>{{ student.name }}</p>
+         <router-link
+            :to="{ name: 'studentsInfo', params: { id: student.id } }"
+            >{{ student.name }}</router-link
+         >
       </div>
    </div>
 </template>
