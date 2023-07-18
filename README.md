@@ -6,7 +6,7 @@ Bu proje benim Vuejs öğrenme yolculuğumu temsil etmek için oluşturuldu. Rea
 
 -  **Todo App**
 
-Yandaki linke tıklayarak [this link](https://vue-complete-todo-list.netlify.app)
+Yandaki linke tıklayarak [LINK](https://vue-complete-todo-list.netlify.app)
 projemin canlı demosunu görebilirsiniz.
 
 ## Önemli Gördüğüm Kısımlar
