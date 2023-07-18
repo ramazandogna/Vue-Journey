@@ -17,10 +17,10 @@ Eklenecek.
 
 ### Todo App
 
+-  **Home Page**
+
 ![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/09-Project-1-Planner/project-planner/src/assets/screenshots/homepage.png)
 
 -  **Home Page Filtered**
 
 ![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/09-Project-1-Planner/project-planner/src/assets/screenshots/homepage-filtered.png)
-
--  **Edit Page**
