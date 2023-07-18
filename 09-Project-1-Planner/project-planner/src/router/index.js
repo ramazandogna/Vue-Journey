@@ -11,12 +11,12 @@ const routes = [
    {
       path: '/add',
       name: 'AddProject',
-      component: () => import('../views/EditProject.vue'),
+      component: () => import('../views/AddProject.vue'),
    },
    {
       path: '/projects/:id',
       name: 'EditProject',
-      component: () => import('../views/AddProject.vue'),
+      component: () => import('../views/EditProject.vue'),
       props: true,
    },
 ];
