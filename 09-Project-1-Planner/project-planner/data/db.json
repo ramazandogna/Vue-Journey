@@ -1,28 +1,34 @@
 {
   "projects": [
     {
-      "id": 2,
-      "title": "Neymar Bapsityo Jr.",
-      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "complete": true
-    },
-    {
-      "id": 3,
-      "title": "Dusko Tadic",
-      "details": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      "complete": false
-    },
-    {
-      "id": 4,
-      "title": "Edin Dzecho",
-      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-      "complete": false
-    },
-    {
-      "title": "Vue Project",
-      "details": "Vue project is the which is created project by using vue",
+      "title": "Example Task 1",
+      "details": "This is an example task",
       "complete": false,
-      "id": 7
+      "id": 1
+    },
+    {
+      "title": "Example Task 2 ",
+      "details": "This is a example task too",
+      "complete": true,
+      "id": 2
+    },
+    {
+      "title": "Do Homework",
+      "details": "This is reminder to do homework",
+      "complete": false,
+      "id": 3
+    },
+    {
+      "title": "Do Vue Project",
+      "details": "Do some vue project to learn well",
+      "complete": true,
+      "id": 4
+    },
+    {
+      "title": "Write Typescript",
+      "details": "Write some typescript to learn how i can type typescript.",
+      "complete": false,
+      "id": 5
     }
   ]
 }

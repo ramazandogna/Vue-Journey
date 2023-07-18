@@ -3,7 +3,7 @@
    "version": "0.1.0",
    "private": true,
    "scripts": {
-      "start": "concurrently \"json-server --watch data/db.json\" \"vue-cli-service serve\""
+      "serve": "concurrently \"json-server --watch data/db.json\" \"vue-cli-service serve\""
    },
    "dependencies": {
       "core-js": "^3.8.3",

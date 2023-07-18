@@ -12,7 +12,8 @@ export default {};
 <style scoped>
 .main-nav {
    text-align: center;
-   margin: 40px auto;
+   margin: 20px auto;
+   border-bottom: 4px solid #ddd;
 }
 
 .main-nav a {
