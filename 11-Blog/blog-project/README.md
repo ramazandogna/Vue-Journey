@@ -1,4 +1,4 @@
-# project-planner
+# firebase-blog
 
 Planner project using Vue and JSON server.
 
@@ -23,16 +23,12 @@ to see the live demo of the project.
 
 -  **Home Page**
 
-![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/09-Project-1-Planner/project-planner/src/assets/screenshots/homepage.png)
+![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/11-Blog/blog-project/src/assets/screenshots/posts.png)
 
--  **Home Page Filtered**
+-  **Single Post**
 
-![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/09-Project-1-Planner/project-planner/src/assets/screenshots/homepage-filtered.png)
+![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/11-Blog/blog-project/src/assets/screenshots/singlePost.png)
 
--  **Edit Page**
+-  **Add Post**
 
-![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/09-Project-1-Planner/project-planner/src/assets/screenshots/edit.png)
-
--  **Add Page**
-
-![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/09-Project-1-Planner/project-planner/src/assets/screenshots/add.png)
+![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/11-Blog/blog-project/src/assets/screenshots/addPost.png)
