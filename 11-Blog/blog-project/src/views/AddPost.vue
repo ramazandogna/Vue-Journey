@@ -1,17 +1,17 @@
 <template>
-   <form>
+   <form @submit.prevent="addPost">
       <label>Title:</label>
       <input
          type="text"
          v-model="title"
          required
       />
-      <label>Details:</label>
+      <label>Content:</label>
       <textarea
          v-model="details"
          required
       ></textarea>
-      <button>Add Project</button>
+      <button>Add Post</button>
    </form>
 </template>
 
@@ -22,6 +22,12 @@ export default {
          title: '',
          details: '',
       };
+   },
+   methods: {
+      addPost() {
+         // Burada post ekleme işlemlerini gerçekleştirin.
+         // Örneğin: API çağrısı yapabilir veya local bir diziye yeni post ekleyebilirsiniz.
+      },
    },
 };
 </script>

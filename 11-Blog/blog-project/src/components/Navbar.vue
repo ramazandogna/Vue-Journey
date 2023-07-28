@@ -1,13 +1,11 @@
 <template>
    <nav class="main-nav">
       <router-link :to="{ name: 'Home' }">Blog</router-link>
-      <router-link :to="{ name: 'AddProject' }">Add Post</router-link>
+      <router-link :to="{ name: 'AddPost' }">Add Post</router-link>
    </nav>
 </template>
 
-<script>
-export default {};
-</script>
+<script></script>
 
 <style scoped>
 .main-nav {
