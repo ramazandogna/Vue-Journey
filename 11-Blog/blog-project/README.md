@@ -16,7 +16,7 @@ npm run serve
 
 ## Demo
 
-I published my project on netlify. You can click [this link](https://vue-complete-todo-list.netlify.app)
+I published my project on netlify. You can click [this link](https://vue3-firebase-blog.netlify.app/)
 to see the live demo of the project.
 
 ## Screenshots
