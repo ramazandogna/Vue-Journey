@@ -1,16 +1,23 @@
 <template>
    <div class="post">
-      <router-link :to="{ name: 'Post', params: { id: post.id } }">
-         <h3>{{ post.title }}</h3>
-      </router-link>
+      <h3>{{ post.title }}</h3>
+      <div class="content">
+         <p>{{ post.content }}</p>
+      </div>
    </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+import getPosts from '../../composable/getPosts';
 export default {
-   props: ['post'],
+   props: ['id'],
    setup(props) {
-      console.log(props.post.title);
+      const post = ref('');
+      getPosts().then((data) => {
+         post.value = data.find((e) => e.id == props.id);
+      });
+      return { post };
    },
 };
 </script>
@@ -31,10 +38,5 @@ h3 {
 
 p {
    text-align: left;
-}
-
-a {
-   text-decoration: none;
-   color: currentColor;
 }
 </style>

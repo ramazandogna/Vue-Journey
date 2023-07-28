@@ -1,5 +1,5 @@
 <template>
-   <form @submit.prevent="addPost">
+   <form @submit.prevent="handleSubmit">
       <label>Title:</label>
       <input
          type="text"
@@ -8,7 +8,7 @@
       />
       <label>Content:</label>
       <textarea
-         v-model="details"
+         v-model="content"
          required
       ></textarea>
       <button>Add Post</button>
@@ -16,18 +16,34 @@
 </template>
 
 <script>
+//Firebase imports
+import { addDoc, collection, getFirestore } from 'firebase/firestore/lite';
+import { fb } from '../../firebase/config';
+//Vue imports
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
 export default {
-   data() {
-      return {
-         title: '',
-         details: '',
-      };
-   },
-   methods: {
-      addPost() {
-         // Burada post ekleme işlemlerini gerçekleştirin.
-         // Örneğin: API çağrısı yapabilir veya local bir diziye yeni post ekleyebilirsiniz.
-      },
+   setup() {
+      const title = ref('');
+      const content = ref('');
+      const router = useRouter();
+      const id = Date.now();
+      function handleSubmit() {
+         const post = {
+            title: title.value,
+            content: content.value,
+            id: id,
+         };
+         const db = getFirestore(fb);
+         const fbRef = collection(db, 'posts');
+         addDoc(fbRef, post);
+         router.push({
+            name: 'Home',
+         });
+      }
+
+      return { title, content, handleSubmit };
    },
 };
 </script>
