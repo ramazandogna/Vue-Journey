@@ -17,7 +17,6 @@ export default {
    setup() {
       const { logout, error } = useLogout();
       const { user } = getUser();
-      console.log(user);
       const handleClick = async () => {
          await logout();
          if (!error.value) {
@@ -53,9 +52,5 @@ nav p.email {
 
 nav button {
    cursor: pointer;
-}
-.userName {
-}
-.userEmail {
 }
 </style>
