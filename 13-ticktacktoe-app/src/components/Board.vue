@@ -18,12 +18,11 @@
             v-for="y in 3"
             :key="y"
             class="square"
-            @click="move(x, y)"
+            @click="move(x - 1, y - 1)"
          >
-            {{ squares[x][y] }}
+            {{ squares[x - 1][y - 1] }}
          </button>
       </div>
-
       <h2 class="mt-5">History</h2>
       <div
          v-for="(game, idx) in history"
@@ -78,12 +77,12 @@ export default {
       };
 
       const reset = () => {
-         player.value = ref('X');
-         squares.value = ref([
+         player.value = 'X'; // Burada ref kullanmadan direkt değeri atıyoruz.
+         squares.value = [
             ['', '', ''],
             ['', '', ''],
             ['', '', ''],
-         ]);
+         ];
       };
 
       const history = ref([]);
@@ -98,13 +97,16 @@ export default {
          history.value = JSON.parse(localStorage.getItem('history')) || [];
       });
 
-      return { winner, player, squares, move, reset };
+      return { winner, player, squares, move, reset, history };
    },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.container {
+   margin: 0 auto;
+}
 .square {
    background: #fff;
    border: 1px solid #999;
