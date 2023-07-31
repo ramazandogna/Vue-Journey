@@ -7,7 +7,25 @@
 <script>
 //components import
 import Navbar from '../components/Navbar.vue';
-export default { components: { Navbar } };
+//composable import
+import getUser from '@/composables/getUser';
+//vue import
+import { watch } from 'vue';
+//vue router import
+import { useRouter } from 'vue-router';
+export default {
+   components: { Navbar },
+   setup() {
+      const { user } = getUser();
+      const router = useRouter();
+
+      watch(user, () => {
+         if (!user.value) {
+            router.push({ name: 'welcome' });
+         }
+      });
+   },
+};
 </script>
 
 <style></style>
