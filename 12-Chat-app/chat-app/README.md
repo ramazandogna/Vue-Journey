@@ -1,5 +1,14 @@
 # chat-app
 
+Chat app created using with vue and firebase.
+
+## Project details
+
+1. Login
+2. Logout
+3. User data
+4. Post message and show message
+
 ## Project setup
 
 ```
@@ -17,7 +26,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
