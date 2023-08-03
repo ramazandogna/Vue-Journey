@@ -1,6 +1,11 @@
 <template>
    <form @submit.prevent="handleSubmit">
-      <h3>Login</h3>
+      <h3>Signup</h3>
+      <input
+         type="text"
+         placeholder="Display Name"
+         v-model="displayName"
+      />
       <input
          type="email"
          placeholder="Email"
@@ -24,25 +29,25 @@
 
 <script>
 //composable imports
-import useLogin from '../../composables/useLogin.js';
+import useSignup from '@/composables/useSignup';
 //vue imports
 import { ref } from 'vue';
 
 export default {
    setup() {
-      const { error, login, isPending } = useLogin();
+      const { error, signup, isPending } = useSignup();
 
       const email = ref('');
       const password = ref('');
+      const displayName = ref('');
 
       const handleSubmit = async () => {
-         const res = await login(email.value, password.value);
+         const res = await signup(email.value, password.value, displayName.value);
          if (!error.value) {
-            console.log('user logged in');
+            console.log('user signed up');
          }
       };
-
-      return { email, password, handleSubmit, error, isPending };
+      return { error, email, password, displayName, handleSubmit, isPending };
    },
 };
 </script>
