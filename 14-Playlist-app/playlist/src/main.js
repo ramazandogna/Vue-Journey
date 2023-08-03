@@ -7,5 +7,13 @@ import router from './router';
 import store from './store';
 // main css
 import './assets/main.css';
+//firebase
+import { projectAuth } from './firebase/config';
 
-createApp(App).use(store).use(router).mount('#app');
+let app;
+
+projectAuth.onAuthStateChanged(() => {
+   if (!app) {
+      createApp(App).use(router).mount('#app');
+   }
+});

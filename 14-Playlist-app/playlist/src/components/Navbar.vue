@@ -1,15 +1,21 @@
 <template>
    <div class="navbar">
       <nav>
-         <img
-            src="../assets//logo.png"
-            alt=""
-         />
+         <router-link :to="{ name: 'home' }">
+            <img
+               src="../assets//logo.png"
+               alt=""
+         /></router-link>
          <h1>
             <router-link :to="{ name: 'home' }"> Playlist</router-link>
          </h1>
          <div class="links">
             <div v-if="user">
+               <router-link
+                  class="btn"
+                  :to="{ name: 'createplaylist' }"
+                  >Create Playlist</router-link
+               >
                <button @click.prevent="handleSubmit">Logout</button>
             </div>
             <div v-else>
