@@ -17,6 +17,11 @@ const routes = [
       name: 'signup',
       component: () => import('../views/auth/Signup.vue'),
    },
+   {
+      path: '/playlist/create',
+      name: 'createplaylist',
+      component: () => import('../views/playlist/CreatePlaylist.vue'),
+   },
 ];
 
 const router = createRouter({
