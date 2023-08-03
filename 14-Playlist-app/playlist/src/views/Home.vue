@@ -23,8 +23,6 @@ export default {
    components: { ListCard },
    setup() {
       const { error, documents, isPending } = getCollection('playlists');
-      console.log(documents.value);
-      console.log(documents);
 
       return { error, documents, isPending };
    },

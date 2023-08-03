@@ -69,7 +69,7 @@ export default {
             isPending.value = false;
             if (!error.value) {
                console.log('playlist added');
-               // router.push({ name: 'playlistdetails', params: { id: res.id } });
+               router.push({ name: 'playlistdetails', params: { id: res.id } });
             }
          }
       };
