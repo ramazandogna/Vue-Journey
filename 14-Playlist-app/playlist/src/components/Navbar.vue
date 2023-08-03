@@ -9,26 +9,51 @@
             <router-link :to="{ name: 'home' }"> Playlist</router-link>
          </h1>
          <div class="links">
-            <button>Logout</button>
-            <router-link
-               class="btn"
-               :to="{ name: 'signup' }"
-            >
-               Signup
-            </router-link>
-            <router-link
-               class="btn"
-               :to="{ name: 'signup' }"
-            >
-               Login
-            </router-link>
+            <div v-if="user">
+               <button @click.prevent="handleSubmit">Logout</button>
+            </div>
+            <div v-else>
+               <router-link
+                  class="btn"
+                  :to="{ name: 'signup' }"
+               >
+                  Signup
+               </router-link>
+               <router-link
+                  class="btn"
+                  :to="{ name: 'login' }"
+               >
+                  Login
+               </router-link>
+            </div>
          </div>
       </nav>
    </div>
 </template>
 
 <script>
-export default {};
+//composable imports
+import getUser from '@/composables/getUser';
+import useLogout from '@/composables/useLogout';
+//router
+import { useRouter } from 'vue-router';
+
+export default {
+   setup() {
+      const { error, logout, isPending } = useLogout();
+      const { user } = getUser();
+      const router = useRouter();
+      const handleSubmit = async () => {
+         await logout();
+         router.push({ name: 'login' });
+         if (!error.value) {
+            console.log('Logged out is succesfull');
+         }
+      };
+
+      return { error, handleSubmit, isPending, user };
+   },
+};
 </script>
 
 <style scoped>

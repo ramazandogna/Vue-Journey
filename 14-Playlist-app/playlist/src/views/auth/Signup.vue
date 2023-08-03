@@ -32,17 +32,19 @@
 import useSignup from '@/composables/useSignup';
 //vue imports
 import { ref } from 'vue';
-
+//router imports
+import { useRouter } from 'vue-router';
 export default {
    setup() {
       const { error, signup, isPending } = useSignup();
-
+      const router = useRouter();
       const email = ref('');
       const password = ref('');
       const displayName = ref('');
 
       const handleSubmit = async () => {
          const res = await signup(email.value, password.value, displayName.value);
+         router.push({ name: 'home' });
          if (!error.value) {
             console.log('user signed up');
          }
