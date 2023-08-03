@@ -23,7 +23,12 @@
          {{ error }}
       </div>
       <button v-if="!isPending">Login</button>
-      <button v-else>Loading</button>
+      <button
+         v-else
+         disabled
+      >
+         Loading...
+      </button>
    </form>
 </template>
 
