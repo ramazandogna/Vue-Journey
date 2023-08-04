@@ -43,7 +43,7 @@ import useDocument from '@/composables/useDocument';
 export default {
    props: ['playlist'],
    setup(props) {
-      const { updateDoc } = useDocument('playlist', props.playlist.id);
+      const { updateDoc } = useDocument('playlists', props.playlist.id);
       const title = ref('');
       const artist = ref('');
       const showForm = ref(false);

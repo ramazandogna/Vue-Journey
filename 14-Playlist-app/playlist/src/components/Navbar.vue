@@ -16,7 +16,18 @@
                   :to="{ name: 'createplaylist' }"
                   >Create Playlist</router-link
                >
-               <button @click.prevent="handleSubmit">Logout</button>
+               <button
+                  v-if="!isPending"
+                  @click.prevent="handleSubmit"
+               >
+                  Logout
+               </button>
+               <button
+                  v-else
+                  disabled
+               >
+                  Logging out
+               </button>
             </div>
             <div v-else>
                <router-link
@@ -49,7 +60,6 @@ export default {
       const { error, logout, isPending } = useLogout();
       const { user } = getUser();
       const router = useRouter();
-
       const handleSubmit = async () => {
          await logout();
          router.push({ name: 'login' });

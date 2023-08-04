@@ -3,8 +3,6 @@ import { createApp } from 'vue';
 import App from './App.vue';
 //router
 import router from './router';
-// vuex
-import store from './store';
 // main css
 import './assets/main.css';
 //firebase
@@ -14,6 +12,6 @@ let app;
 
 projectAuth.onAuthStateChanged(() => {
    if (!app) {
-      createApp(App).use(router).mount('#app');
+      app = createApp(App).use(router).mount('#app');
    }
 });

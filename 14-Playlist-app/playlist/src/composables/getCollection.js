@@ -11,6 +11,7 @@ const getCollection = (collection) => {
    collectionRef.onSnapshot(
       (snap) => {
          isPending.value = true;
+
          let result = [];
          snap.docs.forEach((doc) => {
             doc.data().createdAt && result.push({ ...doc.data(), id: doc.id });
@@ -22,7 +23,7 @@ const getCollection = (collection) => {
          console.log(err.message);
          documents.value = null;
          error.value = 'could not fetch data';
-         isPending.value = false;
+         isPending.value = true;
       }
    );
    return { documents, error, isPending };

@@ -1,25 +1,25 @@
-import { ref } from 'vue';
-import { projectAuth } from '../firebase/config';
+import { ref } from "vue";
+import { projectAuth } from "../firebase/config";
 
 const error = ref(null);
-const isPending = ref(false);
+const isPenging = ref(false);
 
 const logout = async () => {
-   error.value = null;
-   isPending.value = true;
+  error.value = null;
+  isPenging.value = true;
 
-   try {
-      await projectAuth.signOut();
-      isPending.value = false;
-   } catch (err) {
-      console.log(err.message);
-      error.value = err.message;
-      isPending.value = false;
-   }
+  try {
+    await projectAuth.signOut();
+    isPenging.value = false;
+  } catch (err) {
+    console.log(err.message);
+    error.value = err.message;
+    isPenging.value = false;
+  }
 };
 
 const useLogout = () => {
-   return { logout, error, isPending };
+  return { logout, error, isPenging };
 };
 
 export default useLogout;
