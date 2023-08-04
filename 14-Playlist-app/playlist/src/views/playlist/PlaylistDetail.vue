@@ -15,7 +15,7 @@
                <img :src="playlist.coverUrl" />
             </div>
             <h2>{{ playlist.title }}</h2>
-            <p class="username">Created by{{ playlist.userName }}</p>
+            <p class="username">Created by {{ playlist.userName }}</p>
             <p class="description">{{ playlist.description }}</p>
             <button
                v-if="ownership"
@@ -26,7 +26,23 @@
             </button>
          </div>
          <div class="song-list">
-            <h3>Song List</h3>
+            <div v-if="!playlist.songs.length">There is any song here.</div>
+            <div
+               v-for="song in playlist.songs"
+               :key="song.id"
+               class="single-song"
+            >
+               <div class="details">
+                  <h3>{{ song.title }}</h3>
+                  <p>{{ song.artist }}</p>
+               </div>
+               <button
+                  v-if="ownership"
+                  @click="handleClick(song.id)"
+               >
+                  Delete song
+               </button>
+            </div>
             <AddSong
                v-if="ownership"
                :playlist="playlist"
@@ -47,14 +63,14 @@ import { computed } from 'vue';
 //router import
 import { useRouter } from 'vue-router';
 //component imports
-import AddSong from '@/components/AddSong.vue';
+import AddSong from '../../components/AddSong.vue';
 
 export default {
    props: ['id'],
    components: { AddSong },
    setup(props) {
       const { error, document: playlist } = getDocument('playlists', props.id);
-      const { isPending, deleteDoc } = useDocument('playlists', props.id);
+      const { isPending, deleteDoc, updateDoc } = useDocument('playlists', props.id);
       const { user } = getUser();
       const { deleteImage } = useStorage();
       const router = useRouter();
@@ -68,7 +84,12 @@ export default {
          router.push({ name: 'home' });
       };
 
-      return { error, playlist, ownership, isPending, handleDelete };
+      const handleClick = async (id) => {
+         const songs = playlist.value.songs.filter((song) => song.id !== id);
+         await updateDoc({ songs });
+      };
+
+      return { error, playlist, ownership, isPending, handleDelete, handleClick };
    },
 };
 </script>
@@ -117,7 +138,7 @@ export default {
    color: #999;
 }
 .description {
-   text-align: left;
+   text-align: center;
 }
 .single-song {
    padding: 10px 0;
