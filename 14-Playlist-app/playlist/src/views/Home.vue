@@ -29,3 +29,5 @@ export default {
    components: { ListCard },
 };
 </script>
+
+<style></style>

@@ -6,7 +6,7 @@
                src="../assets//logo.png"
                alt=""
          /></router-link>
-         <h1>
+         <h1 class="logo">
             <router-link :to="{ name: 'home' }"> Playlist</router-link>
          </h1>
          <div class="links">
@@ -75,9 +75,10 @@ export default {
 
 <style scoped>
 .navbar {
-   padding: 16px 10px;
-   margin-bottom: 60px;
-   background: #fff;
+   padding: 12px 10px;
+   margin-bottom: 50px;
+   background: #f5f3f3;
+   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 nav {
    display: flex;
@@ -86,8 +87,13 @@ nav {
    margin: 0 auto;
 }
 nav h1 {
-   margin-left: 20px;
+   margin-left: 10px;
 }
+
+.logo {
+   color: #777;
+}
+
 nav .links {
    margin-left: auto;
 }

@@ -3,8 +3,8 @@
 
 /* variables */
 :root {
-   --primary: #4f515a;
-   --secondary: #e0e0e0;
+   --primary: #999;
+   --secondary: #ea5154;
    --warning: #da0f41;
 }
 
@@ -32,9 +32,12 @@ button,
    font-weight: 600;
    cursor: pointer;
    display: inline-block;
+   color: #fafafa;
+   transition: all 0.3s;
 }
 button:hover,
 .btn:hover {
+   transition: all 0.3s;
    background: var(--primary);
    color: white;
 }

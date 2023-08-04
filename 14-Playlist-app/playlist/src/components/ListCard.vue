@@ -30,10 +30,11 @@ export default {
    display: flex;
    align-items: center;
    padding: 20px;
-   border-radius: 10px;
-   background: white;
+   border-radius: 20px;
+   background: #f5f3f3;
    margin: 16px 0;
    transition: all ease 0.2s;
+   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 .single:hover {
    box-shadow: 1px 2px 3px rgba(50, 50, 50, 0.05);
@@ -46,6 +47,11 @@ export default {
    overflow: hidden;
    border-radius: 10px;
 }
+
+.info h3 {
+   color: #ea5154;
+}
+
 img {
    max-width: 150%;
    max-height: 150%;
@@ -56,5 +62,6 @@ img {
 }
 .song-number {
    margin-left: auto;
+   color: #ea5154;
 }
 </style>
