@@ -1,6 +1,6 @@
 <template>
    <form @submit.prevent="handleSubmit">
-      <h3>Signup</h3>
+      <h3 class="card-title">Signup</h3>
       <input
          type="text"
          placeholder="Display Name"
@@ -22,13 +22,15 @@
       >
          {{ error }}
       </div>
-      <button v-if="!isPending">Login</button>
-      <button
-         v-else
-         disabled
-      >
-         Loading...
-      </button>
+      <div class="button-container">
+         <button v-if="!isPending">Login</button>
+         <button
+            v-else
+            disabled
+         >
+            Loading...
+         </button>
+      </div>
    </form>
 </template>
 

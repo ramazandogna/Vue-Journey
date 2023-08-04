@@ -1,16 +1,13 @@
 <template>
    <div class="navbar">
       <nav>
-         <router-link :to="{ name: 'home' }">
-            <img
-               src="../assets//logo.png"
-               alt=""
-         /></router-link>
+         <router-link :to="{ name: 'home' }"> <img src="../assets//logo.png" /></router-link>
          <h1 class="logo">
             <router-link :to="{ name: 'home' }"> Playlist</router-link>
          </h1>
          <div class="links">
             <div v-if="user">
+               <span>Welcome,&ensp; {{ user.displayName }}</span>
                <router-link
                   class="btn"
                   :to="{ name: 'createplaylist' }"
@@ -59,6 +56,7 @@ export default {
    setup() {
       const { error, logout, isPending } = useLogout();
       const { user } = getUser();
+      console.log(user.displayName);
       const router = useRouter();
       const handleSubmit = async () => {
          await logout();
@@ -99,10 +97,18 @@ nav .links {
 }
 nav .links a,
 button {
-   margin-left: 16px;
+   margin-left: 6px;
    font-size: 14px;
 }
 nav img {
-   max-height: 60px;
+   max-height: 50px;
+}
+
+span {
+   font-size: 14px;
+   display: inline-block;
+   margin-right: 16px;
+   padding-right: 16px;
+   border-right: 1px solid #ccc;
 }
 </style>

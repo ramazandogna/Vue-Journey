@@ -11,7 +11,7 @@
                   <p>created by {{ playlist.userName }}</p>
                </div>
                <div class="song-number">
-                  <p>{{ playlist.songs.length }}</p>
+                  <p>{{ playlist.songs.length }} song</p>
                </div>
             </div></router-link
          >

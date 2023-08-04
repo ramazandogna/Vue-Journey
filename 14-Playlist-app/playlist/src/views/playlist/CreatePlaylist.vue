@@ -1,6 +1,6 @@
 <template>
    <form @submit.prevent="handleSubmit">
-      <h4>Create Playlist</h4>
+      <h4 class="card-title">Create Playlist</h4>
       <input
          type="text"
          required
@@ -13,18 +13,22 @@
          v-model="description"
       ></textarea>
       <label>Upload playlist cover image</label>
-      <input
-         type="file"
-         @change="handleChange"
-      />
+      <div class="file-input-container">
+         <input
+            type="file"
+            @change="handleChange"
+         />
+      </div>
       <div class="error">{{ fileError }}</div>
-      <button v-if="!isPending">Create</button>
-      <button
-         v-else
-         disabled
+      <span class="button-container"
+         ><button v-if="!isPending">Create</button>
+         <button
+            v-else
+            disabled
+         >
+            Sending...
+         </button></span
       >
-         Sending...
-      </button>
    </form>
 </template>
 
@@ -97,10 +101,42 @@ export default {
 </script>
 
 <style>
-input[type='file'] {
-   border: 0;
-   padding: 0;
+.file-input-container {
+   background-color: #e5e7eb;
+   border-radius: 10px;
 }
+input[type='file']::file-selector-button {
+   border-radius: 4px;
+   padding: 0 16px;
+   height: 40px;
+   cursor: pointer;
+   background-color: white;
+   border: 1px solid rgba(0, 0, 0, 0.16);
+   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+   margin-right: 16px;
+   transition: background-color 200ms;
+}
+
+/* file upload button hover state */
+input[type='file']::file-selector-button:hover {
+   background-color: #f3f4f6;
+}
+
+/* file upload button active state */
+input[type='file']::file-selector-button:active {
+   background-color: #e5e7eb;
+}
+/* input[type='file'] {
+   background: var(--secondary);
+   border-radius: 8px;
+   border: 0;
+   padding: 8px 12px;
+   font-weight: 600;
+   cursor: pointer;
+   display: inline-block;
+   color: #fafafa;
+   transition: all 0.3s;
+} */
 label {
    font-size: 12px;
    display: block;
@@ -108,5 +144,9 @@ label {
 }
 button {
    margin-top: 20px;
+}
+.buton-container {
+   display: flex;
+   justify-content: center;
 }
 </style>

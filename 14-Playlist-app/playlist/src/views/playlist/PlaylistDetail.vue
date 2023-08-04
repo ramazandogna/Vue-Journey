@@ -34,7 +34,7 @@
             >
                <div class="details">
                   <h3>{{ song.title }}</h3>
-                  <p>--{{ song.artist }}</p>
+                  <p>> {{ song.artist }}</p>
                </div>
                <button
                   v-if="ownership"
@@ -120,8 +120,8 @@ export default {
    border: 1px solid #ddd;
 }
 .cover img {
-   width: 220px;
-   height: 250px;
+   width: 350px;
+   height: 220px;
    border-radius: 20px;
    transition: all 0.3s ease-in-out;
 }
@@ -191,9 +191,11 @@ export default {
 
 .details h3 {
    color: #ea5154;
+   margin-bottom: 0.4rem;
 }
 
 .details p {
+   padding-left: 0.5rem;
    color: #cf787a;
    font-style: italic;
 }
