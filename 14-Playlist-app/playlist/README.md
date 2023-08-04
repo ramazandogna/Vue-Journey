@@ -1,19 +1,38 @@
-# vuex
+# Playlist app
+
+Playlist app with using Vuejs and Firebase.
 
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Demo
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+I published my project on netlify. You can click [this link](https://pokepokeapp.netlify.app/)
+to see the live demo of the project.
+
+## Techs
+
+Vue (Router), CSS and Firebase.
+
+## Screenshots
+
+-  **Playlists**
+
+![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/14-Playlist-app/playlist/src/assets/screenshots/playlists.png)
+
+-  **Playlist Detail**
+
+![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/14-Playlist-app/playlist/src/assets/screenshots/playlist-detail.png)
+
+-  **Signup**
+
+![App Screenshot](https://github.com/ramazandogna/Vue-Journey/blob/master/14-Playlist-app/playlist/src/assets/screenshots/signup.png)

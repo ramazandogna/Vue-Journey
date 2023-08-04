@@ -5,8 +5,7 @@ import 'firebase/auth';
 import 'firebase/storage';
 
 const firebaseConfig = {
-   apiKey: 'AIzaSyCd1xoUDh1WszMccoq_wgrN7AUSYujmqic',
-   authDomain: 'play-list-14a61.firebaseapp.com',
+   apiKey: AIzaSyCd1xoUDh1WszMccoq_wgrN7AUSYujmqic,
    projectId: 'play-list-14a61',
    storageBucket: 'play-list-14a61.appspot.com',
    messagingSenderId: '341935022563',
