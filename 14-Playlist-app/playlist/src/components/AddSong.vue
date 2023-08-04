@@ -25,14 +25,25 @@
          />
          <button>Add</button>
       </form>
+      <button
+         v-if="showForm"
+         @click="showForm = false"
+      >
+         Close add song
+      </button>
    </div>
 </template>
 
 <script>
 //vue imports
 import { ref } from 'vue';
+//composable imports
+import useDocument from '@/composables/useDocument';
+
 export default {
-   setup() {
+   props: ['playlist'],
+   setup(props) {
+      const { updateDoc } = useDocument('playlist', props.playlist.id);
       const title = ref('');
       const artist = ref('');
       const showForm = ref(false);
@@ -43,7 +54,11 @@ export default {
             artist: artist.value,
             id: Math.floor(Math.random() * 100000),
          };
-         console.log(newSong);
+         await updateDoc({
+            songs: [...props.playlist.songs, newSong],
+         });
+         title.value = '';
+         artist.value = '';
       };
       return { artist, title, showForm, handleSubmit };
    },

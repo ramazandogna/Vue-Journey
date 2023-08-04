@@ -49,6 +49,7 @@ export default {
       const { error, logout, isPending } = useLogout();
       const { user } = getUser();
       const router = useRouter();
+
       const handleSubmit = async () => {
          await logout();
          router.push({ name: 'login' });
