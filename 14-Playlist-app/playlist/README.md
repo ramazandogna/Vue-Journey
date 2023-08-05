@@ -16,7 +16,7 @@ npm run serve
 
 ## Demo
 
-I published my project on netlify. You can click [this link](https://pokepokeapp.netlify.app/)
+I published my project on netlify. You can click [this link](https://playlist-app-vue.netlify.app/)
 to see the live demo of the project.
 
 ## Techs
